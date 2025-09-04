@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import moment from "moment-timezone";
 
 export default function Contagem() {
-  const targetDate = moment.tz("2025-11-29 19:00:00", "America/Fortaleza");
+  const targetDate = moment.tz("2025-11-29 18:00:00", "America/Fortaleza");
 
   const calculateTimeLeft = () => {
     const now = moment.tz("America/Fortaleza");
@@ -36,7 +36,9 @@ export default function Contagem() {
   }, []);
 
   return (
-    <div style={{ display: "flex", gap: "10px", justifyContent: "center", fontFamily: "sans-serif" }}>
+    <section id="contagem">
+      <h2>Contagem Regressiva</h2>
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center", fontFamily: "sans-serif" }}>
       {Object.entries(timeLeft).map(([unit, value]) => (
         <div
           key={unit}
@@ -54,5 +56,6 @@ export default function Contagem() {
         </div>
       ))}
     </div>
+    </section>
   );
 }

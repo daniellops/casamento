@@ -22,39 +22,43 @@ export default function Presente() {
   }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
-      {gifts.map(gift => (
-        <div key={gift.id} style={{
-          width: 220,
-          border: '1px solid #EEE',
-          borderRadius: 16,
-          padding: 16,
-          textAlign: 'center',
-          marginBottom: 16,
-        }}>
-          <img src={gift.img} alt={gift.name} style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 8 }} />
-          <h4 style={{ margin: '12px 0 6px' }}>{gift.name}</h4>
-          <div style={{ fontWeight: 'bold', color: '#555', marginBottom: 12 }}>R$ {gift.price.toFixed(2)}</div>
-          <button
-            style={{
-              background: '#9575cd',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 24,
-              padding: '8px 24px',
-              cursor: 'pointer'
-            }}
-            onClick={() => handlePresent(gift)}
-          >
-            Presentear
-          </button>
-        </div>
-      ))}
+    <section id="presente">
+      <h2>Lista de Presentes</h2>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
+        {gifts.map(gift => (
+          <div key={gift.id} style={{
+            width: 220,
+            border: '1px solid #EEE',
+            borderRadius: 16,
+            padding: 16,
+            textAlign: 'center',
+            marginBottom: 16,
+          }}>
+            <img src={gift.img} alt={gift.name} style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 8 }} />
+            <h4 style={{ margin: '12px 0 6px' }}>{gift.name}</h4>
+            <div style={{ fontWeight: 'bold', color: '#555', marginBottom: 12 }}>R$ {gift.price.toFixed(2)}</div>
+            <button
+              style={{
+                background: '#9575cd',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 24,
+                padding: '8px 24px',
+                cursor: 'pointer'
+              }}
+              onClick={() => handlePresent(gift)}
+            >
+              Presentear
+            </button>
+          </div>
+        ))}
 
-      {selectedGift && (
-        <PaymentModal gift={selectedGift} onClose={closeModal} />
-      )}
-    </div>
+        {selectedGift && (
+          <PaymentModal gift={selectedGift} onClose={closeModal} />
+        )}
+      </div>
+    </section>
+
   );
 }
 
@@ -78,10 +82,10 @@ function PaymentModal({ gift, onClose }) {
         textAlign: 'center',
         position: 'relative'
       }}>
-        {/* Botão de fechar no canto superior direito */}
         <button
           onClick={onClose}
           style={{
+            color: 'black',
             position: 'absolute',
             top: 16,
             right: 16,

@@ -1,4 +1,3 @@
-import Historia from './components/Historia';
 import Galeria from './components/Galeria';
 import Localizacao from './components/Localizacao';
 import Presente from './components/Presente';
@@ -7,7 +6,6 @@ import Contagem from './components/Contagem';
 export default function App() {
   return (
     <div>
-      <Historia />
       <Contagem />
       <Galeria />
       <Localizacao />
