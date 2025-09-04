@@ -1,36 +1,3 @@
-// import React from 'react';
-// import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-
-// const position = { lat: -3.825336, lng: -38.433836 };
-
-// const containerStyle = {
-//   width: '100%',
-//   maxWidth: 600,
-//   height: 400,
-//   margin: '0 auto',
-//   borderRadius: '16px',
-//   overflow: 'hidden',
-//   boxShadow: '0 2px 8px #aaa'
-// };
-
-// export default function GoogleMapEvent() {
-//   const { isLoaded } = useJsApiLoader({
-//     googleMapsApiKey: "AIzaSyAu6mQ-75cNqNDHLhe2yfHm-nb7XY-dy10"
-//   });
-
-//   return isLoaded ? (
-//     <GoogleMap
-//       mapContainerStyle={containerStyle}
-//       center={position}
-//       zoom={16}
-//     >
-//       <Marker position={position} />
-//     </GoogleMap>
-//   ) : (
-//     <div>Carregando mapa...</div>
-//   );
-// }
-
 export default function Localizacao() {
   return (
     <section id="localizacao">
