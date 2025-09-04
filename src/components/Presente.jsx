@@ -1,0 +1,117 @@
+import React, { useState } from 'react';
+
+// Lista de valores dos presentes
+const giftValues = Array.from({ length: 18 }, (_, i) => 150 + i * 50);
+
+const gifts = giftValues.map((value, idx) => ({
+  id: idx,
+  name: `Presente ${value} reais`,
+  price: value,
+  img: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Square_200x200.png',
+}));
+
+export default function Presente() {
+  const [selectedGift, setSelectedGift] = useState(null);
+
+  function handlePresent(gift) {
+    setSelectedGift(gift);
+  }
+
+  function closeModal() {
+    setSelectedGift(null);
+  }
+
+  return (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
+      {gifts.map(gift => (
+        <div key={gift.id} style={{
+          width: 220,
+          border: '1px solid #EEE',
+          borderRadius: 16,
+          padding: 16,
+          textAlign: 'center',
+          marginBottom: 16,
+        }}>
+          <img src={gift.img} alt={gift.name} style={{ width: 120, height: 120, objectFit: 'cover', borderRadius: 8 }} />
+          <h4 style={{ margin: '12px 0 6px' }}>{gift.name}</h4>
+          <div style={{ fontWeight: 'bold', color: '#555', marginBottom: 12 }}>R$ {gift.price.toFixed(2)}</div>
+          <button
+            style={{
+              background: '#9575cd',
+              color: '#fff',
+              border: 'none',
+              borderRadius: 24,
+              padding: '8px 24px',
+              cursor: 'pointer'
+            }}
+            onClick={() => handlePresent(gift)}
+          >
+            Presentear
+          </button>
+        </div>
+      ))}
+
+      {selectedGift && (
+        <PaymentModal gift={selectedGift} onClose={closeModal} />
+      )}
+    </div>
+  );
+}
+
+// Modal de Pagamento (simulação Mercado Pago)
+function PaymentModal({ gift, onClose }) {
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0, left: 0, right: 0, bottom: 0,
+      background: 'rgba(0,0,0,0.4)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: 1000
+    }}>
+      <div style={{
+        background: '#FFF',
+        borderRadius: 16,
+        padding: 32,
+        minWidth: 350,
+        textAlign: 'center',
+        position: 'relative'
+      }}>
+        {/* Botão de fechar no canto superior direito */}
+        <button
+          onClick={onClose}
+          style={{
+            position: 'absolute',
+            top: 16,
+            right: 16,
+            background: 'none',
+            border: 'none',
+            fontSize: 20,
+            cursor: 'pointer'
+          }}
+          title="Fechar"
+        >×</button>
+        
+        <h3>Pagamento Presente</h3>
+        <img src={gift.img} alt={gift.name} style={{ width: 80, height: 80, borderRadius: 8, margin: '16px 0' }} />
+        <div style={{ fontWeight: 'bold', fontSize: 20 }}>R$ {gift.price.toFixed(2)}</div>
+        <p>Insira os dados do cartão de crédito para realizar o pagamento.</p>
+        <button
+          style={{
+            background: '#00a650',
+            color: '#fff',
+            border: 'none',
+            borderRadius: 24,
+            padding: '10px 32px',
+            fontSize: 16,
+            marginTop: 18,
+            cursor: 'pointer'
+          }}
+        >
+          Pagar com Mercado Pago
+        </button>
+      </div>
+    </div>
+  );
+}
