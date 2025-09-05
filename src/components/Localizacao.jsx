@@ -2,6 +2,15 @@ export default function Localizacao() {
   return (
     <section id="localizacao">
       <h2>Recepção</h2>
+      <p style={{ maxWidth: '700px', margin: '1rem auto', lineHeight: '1.6' }}>
+        Com imensa alegria, os noivos convidam para a recepção em celebração à união do casal, 
+        a realizar-se no <strong>dia 29 de novembro de 2025</strong>.
+      </p>
+      <p style={{ maxWidth: '700px', margin: '1rem auto', lineHeight: '1.6' }}>
+        O encontro acontecerá no <strong>Salão de festas do condomínio Quintas do Lago</strong>, 
+        no bairro <strong>Coaçu, no Eusébio</strong>, onde amigos e familiares serão recebidos 
+        em um ambiente repleto de afeto, encanto e celebração.
+      </p>
       <div style={{
         width: '100%',
         maxWidth: 600,
