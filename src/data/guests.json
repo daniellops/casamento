@@ -1,0 +1,12 @@
+[
+  {
+    "name": "João Silva",
+    "phone": "11987654321",
+    "maxGuests": 2
+  },
+  {
+    "name": "Maria Oliveira",
+    "phone": "21988887777",
+    "maxGuests": 4
+  }
+]

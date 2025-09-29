@@ -24,7 +24,7 @@ export default function Presente() {
   return (
     <section id="presente">
       <h2>Lista de Presentes</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24 }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, justifyContent: 'center'  }}>
         {gifts.map(gift => (
           <div key={gift.id} style={{
             width: 220,
