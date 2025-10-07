@@ -17,7 +17,7 @@ export default function App() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
-    <section id="casal">
+    <section id="casal" style={{ background: '#DABCA3', color:'#fff'}}>
       <h2>O Casal</h2>
 
       <p>Aqui, vamos compartilhar com vocês os capítulos mais especiais da nossa história de amor. Cada riso, cada abraço e cada sonho – e agora, a contagem regressiva para o dia mais importante e sonhado de nossas vidas começou! Cada detalhe deste site carrega um pedacinho do nosso coração.</p>

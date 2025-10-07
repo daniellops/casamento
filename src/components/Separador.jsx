@@ -3,7 +3,7 @@ import React from "react";
 const Separador = ({ backgroundColor = "#ffffff" }) => {
   return (
     <div
-      class="separador"
+      className="separador"
       style={{
         backgroundColor,
         display: "flex",

@@ -62,8 +62,44 @@ export default function Presente() {
   );
 }
 
+const handlePayment = async (name, gift) => {
+  try {
+    const response = await fetch('http://localhost:3001/api/create_payment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        giftName: gift.name,
+        price: gift.price,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      window.location.href = data.init_point;
+    } else {
+      alert(data.error || 'Erro ao criar pagamento');
+    }
+  } catch (err) {
+    alert('Falha na requisição');
+  }
+};
+
 // Modal de Pagamento (simulação Mercado Pago)
 function PaymentModal({ gift, onClose }) {
+  const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  // Chama passando os dados do input + presente
+  const onPay = async () => {
+    setLoading(true);
+    await handlePayment(name, gift);
+    setLoading(false);
+  };
+
   return (
     <div style={{
       position: 'fixed',
@@ -100,8 +136,26 @@ function PaymentModal({ gift, onClose }) {
         <h3>Pagamento Presente</h3>
         <img src={gift.img} alt={gift.name} style={{ width: 80, height: 80, borderRadius: 8, margin: '16px 0' }} />
         <div style={{ fontWeight: 'bold', fontSize: 20 }}>R$ {gift.price.toFixed(2)}</div>
-        <p>Insira os dados do cartão de crédito para realizar o pagamento.</p>
+
+        <div style={{ fontWeight: 'bold', fontSize: 20 }}>
+          <input
+            type="text"
+            placeholder="Nome completo"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            style={{
+              padding: "12px 16px",
+              borderRadius: 12,
+              border: "1px solid #CCC",
+              fontSize: 16,
+            }}
+          />
+        </div>
+        
         <button
+          onClick={onPay}
+          disabled={!name.trim() || loading}
           style={{
             background: '#00a650',
             color: '#fff',
@@ -113,9 +167,11 @@ function PaymentModal({ gift, onClose }) {
             cursor: 'pointer'
           }}
         >
-          Pagar com Mercado Pago
+          {loading ? "Processando..." : "Pagar com Mercado Pago"}
         </button>
       </div>
     </div>
   );
 }
+
+

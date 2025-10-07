@@ -36,7 +36,7 @@ export default function Contagem() {
   }, []);
 
   return (
-    <section id="contagem">
+    <section id="contagem" style={{ background: '#DABCA3'}}>
       <h2>Contagem Regressiva</h2>
       <div style={{ display: "flex", gap: "10px", justifyContent: "center", fontFamily: "sans-serif" }}>
       {Object.entries(timeLeft).map(([unit, value]) => (
