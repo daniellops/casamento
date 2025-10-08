@@ -173,5 +173,3 @@ function PaymentModal({ gift, onClose }) {
     </div>
   );
 }
-
-

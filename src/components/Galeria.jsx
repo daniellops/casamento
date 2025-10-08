@@ -48,9 +48,30 @@ export default function App() {
         }}
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <img src="/foto01.jpeg" />
         </SwiperSlide>
         <SwiperSlide>
+          <img src="/foto02.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto03.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto04.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto05.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto06.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto07.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto08.jpeg" />
+        </SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
         </SwiperSlide>
         <SwiperSlide>
@@ -76,19 +97,43 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={8}
         freeMode={true}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
         className="mySwiper"
       >
         <SwiperSlide>
+          <img src="/foto01.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto02.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto03.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto04.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto05.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto06.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto07.jpeg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="/foto08.jpeg" />
+        </SwiperSlide>
+        {/* <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
         </SwiperSlide>
         <SwiperSlide>
@@ -117,7 +162,7 @@ export default function App() {
         </SwiperSlide>
         <SwiperSlide>
           <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
+        </SwiperSlide> */}
       </Swiper>
     </ section>
   );

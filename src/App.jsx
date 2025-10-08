@@ -1,10 +1,10 @@
 import Header from './components/Header';
-import Galeria from './components/Galeria';
 import Localizacao from './components/Localizacao';
 import Presente from './components/Presente';
 import Contagem from './components/Contagem';
 import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
+import Casal from './components/Casal';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
       <main style={{ paddingTop: "80px" }}>
         <Contagem />
         <Separador />
-        <Galeria />
+        <Casal />
         <Separador />
         <Localizacao />
         <Separador backgroundColor="#000000" />
