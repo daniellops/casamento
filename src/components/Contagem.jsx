@@ -9,12 +9,7 @@ export default function Contagem() {
     const difference = targetDate.diff(now);
 
     if (difference <= 0) {
-      return {
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      };
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
     }
 
     return {
@@ -31,31 +26,20 @@ export default function Contagem() {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
-
-    return () => clearInterval(timer); // limpa o intervalo ao desmontar
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <section id="contagem" style={{ background: '#DABCA3'}}>
+    <section id="contagem" className="contagem-section">
       <h2>Contagem Regressiva</h2>
-      <div style={{ display: "flex", gap: "10px", justifyContent: "center", fontFamily: "sans-serif" }}>
-      {Object.entries(timeLeft).map(([unit, value]) => (
-        <div
-          key={unit}
-          style={{
-            backgroundColor: "#a186c0",
-            color: "#fff",
-            padding: "20px",
-            borderRadius: "10px",
-            minWidth: "70px",
-            textAlign: "center",
-          }}
-        >
-          <div style={{ fontSize: "24px", fontWeight: "bold" }}>{String(value).padStart(2, "0")}</div>
-          <div style={{ fontSize: "12px" }}>{unit.toUpperCase()}</div>
-        </div>
-      ))}
-    </div>
+      <div className="contagem-container">
+        {Object.entries(timeLeft).map(([unit, value]) => (
+          <div key={unit} className="contagem-box">
+            <div className="contagem-value">{String(value).padStart(2, "0")}</div>
+            <div className="contagem-label">{unit.toUpperCase()}</div>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

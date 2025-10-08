@@ -2,6 +2,12 @@ export default function Localizacao() {
   return (
     <section id="localizacao">
       <h2>Recepção</h2>
+
+      <p>A nossa recepção vai acontecer no salão de festas do condomínio, e estamos superfelizes em ter vocês com a gente nesse dia tão especial! 💛</p>
+      <p>Ao chegar na portaria, é só avisar que está vindo para o casamento de Talita e Lucas, no salão de festas.</p>
+      <p>Ah, e um lembrete importante: não esqueça de levar um documento de identificação com foto, tá? Sem ele, a entrada no condomínio não é permitida.</p>
+      <p>Contamos com vocês pra deixar essa noite ainda mais incrível!</p>
+
       <div style={{
         width: '100%',
         maxWidth: 600,

@@ -5,6 +5,136 @@ section {
   text-align: center;
 }
 
+.separador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 20px 0;
+  background-color: #ffffff; /* valor padrão, pode ser sobrescrito via props */
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav a:hover {
+  color: #e43;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 16px 0;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.contagem-section {
+  background: #dabca3;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contagem-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  flex-wrap: nowrap; /* impede quebra de linha */
+  overflow-x: auto;   /* permite rolagem horizontal se necessário */
+}
+
+.contagem-box {
+  background-color: #a186c0;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  text-align: center;
+  flex-shrink: 0; /* impede que fique menor que 70px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contagem-value {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.contagem-label {
+  font-size: 12px;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+  .contagem-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contagem-value {
+    font-size: 16px;
+  }
+
+  .contagem-label {
+    font-size: 9px;
+  }
+}
 
 .carousel-container {
   width: 100%;
@@ -13,12 +143,13 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
 .carousel-image-area {
   position: relative;
-  /* width: 100%; */
-  max-height: 100vh; /* limita à altura da tela */
+  width: 100%;
+  max-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,14 +157,79 @@ section {
 }
 
 .carousel-image {
-  max-height: 75vh; /* nunca ultrapassa a altura da tela */
-  width: auto;        /* largura ajusta automaticamente */
-  height: auto;       /* mantém proporção */
-  object-fit: contain; /* garante que nada seja cortado */
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.14);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.14);
 }
 
+/* Container principal do carrossel */
+.carousel-container {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Área da imagem principal */
+.carousel-image-area {
+  position: relative;
+  width: 100%;
+  max-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Imagem principal */
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.14);
+}
+
+/* Miniaturas */
+.carousel-thumbnails {
+  display: flex;
+  flex-wrap: wrap; /* permite quebra de linha */
+  gap: 14px;
+  margin-top: 20px;
+  justify-content: center;
+  padding-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Cada miniatura */
+.carousel-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-thumb.active {
+  border-color: #e43;
+  opacity: 1;
+}
+
+/* Botões de navegação (se quiser usar) */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -44,36 +240,49 @@ section {
   color: #fff;
   cursor: pointer;
   z-index: 2;
-  /* padding: 0 20px; */
   transition: color 0.2s;
   opacity: 0.8;
 }
 
-.carousel-btn.left { left: 10px; }
-.carousel-btn.right { right: 10px; }
-.carousel-btn:hover { color: #e43; }
-
-.carousel-thumbnails {
-  display: flex;
-  gap: 14px;
-  margin-top: 20px;
-  justify-content: center;
-  overflow-x: auto;
-  padding-bottom: 8px;
+.carousel-btn.left {
+  left: 10px;
 }
 
-.carousel-thumb {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  opacity: 0.7;
-  border: 2px solid transparent;
-  transition: border-color 0.2s, opacity 0.2s;
+.carousel-btn.right {
+  right: 10px;
 }
 
-.carousel-thumb.active {
-  border-color: #e43;
-  opacity: 1;
+.carousel-btn:hover {
+  color: #e43;
+}
+
+/* Responsivo para tablets e celulares */
+@media (max-width: 768px) {
+  .carousel-image {
+    max-height: 50vh;
+  }
+
+  .carousel-thumb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .carousel-thumbnails {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image {
+    max-height: 40vh;
+  }
+
+  .carousel-thumb {
+    width: 45px;
+    height: 45px;
+  }
+
+  .carousel-thumbnails {
+    gap: 8px;
+  }
 }

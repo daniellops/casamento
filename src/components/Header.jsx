@@ -1,8 +1,15 @@
-// Header.jsx
+import React, { useState } from "react";
+
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header style={styles.header}>
-      <nav style={styles.nav}>
+    <header className="header">
+      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+
+      <nav className={`nav ${menuOpen ? "open" : ""}`}>
         <a href="#contagem">HOME</a>
         <a href="#casal">O CASAL</a>
         <a href="#localizacao">RECEPÇÃO</a>
@@ -12,21 +19,3 @@ export default function Header() {
     </header>
   );
 }
-
-const styles = {
-  header: {
-    position: "fixed", // fixa no topo
-    top: 0,
-    left: 0,
-    width: "100%",
-    backgroundColor: "#fff", // cor de fundo
-    zIndex: 1000, // fica acima do conteúdo
-    boxShadow: "0 2px 4px rgba(0,0,0,0.1)", // sombra leve
-  },
-  nav: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "32px",
-    padding: "16px 0",
-  },
-};
