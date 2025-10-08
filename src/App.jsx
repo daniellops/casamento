@@ -6,6 +6,8 @@ import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
 import Casal from './components/Casal';
 
+import './App.css';
+
 export default function App() {
   return (
     <div>

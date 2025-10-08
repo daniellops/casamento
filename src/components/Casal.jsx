@@ -45,13 +45,11 @@ export default function Casal() {
       <div className="carousel-container">
         <div className="carousel-image-area">
           {/* <button className="carousel-btn left" onClick={goToPrev}>&lt;</button> */}
-          <div className="swiper-button-prev carousel-btn left" onClick={goToPrev}></div>
           <img
             className="carousel-image"
             src={images[current]}
             alt={`foto ${current + 1}`}
           />
-          <div className="swiper-button-next carousel-btn right" onClick={goToNext}></div>
           {/* <button className="carousel-btn right" onClick={goToNext}>&gt;</button> */}
         </div>
         <div className="carousel-thumbnails">
