@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import moment from "moment-timezone";
 
-export default function Contagem() {
+export default function Contagem({ className }) {
   const targetDate = moment.tz("2025-11-29 18:00:00", "America/Fortaleza");
 
   const calculateTimeLeft = () => {
@@ -30,7 +30,7 @@ export default function Contagem() {
   }, []);
 
   return (
-    <section id="contagem" className="contagem-section">
+    <section id="contagem" className={`contagem-section ${className}`}>
       <h2>Contagem Regressiva</h2>
       <div className="contagem-container">
         {Object.entries(timeLeft).map(([unit, value]) => (

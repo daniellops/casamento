@@ -1,3 +1,26 @@
+/* Importando as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Athelas&family=Bubblegum+Sans&display=swap');
+
+/* Textos */
+p {
+  font-family: 'Athelas', serif;
+}
+
+/* Títulos */
+h2 {
+  font-family: 'Bubblegum Sans', Arial;
+}
+
+.bg-1{
+ background-color: #E58A3A;
+ color: #E5DFD8;
+}
+
+.bg-2 {
+  background-color: #E5DFD8;
+  color: #E58A3A;
+}
+
 section {
   max-width: 100%;
   margin: 0 auto;
@@ -11,9 +34,10 @@ section {
   align-items: center;
   width: 100vw;
   padding: 20px 0;
-  background-color: #ffffff; /* valor padrão, pode ser sobrescrito via props */
   overflow: hidden;
 }
+
+/* CAPA */
 
 .capa-section {
   width: 100%;
@@ -27,6 +51,8 @@ section {
   display: block;
   object-fit: contain;
 }
+
+/* MENU */
 
 /* Botão no canto direito */
 /* Container principal */
@@ -142,37 +168,10 @@ section {
   }
 }
 
-/* Responsivo para telas menores
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
 
-  .nav {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    flex-direction: column;
-    background-color: #fff;
-    padding: 16px 0;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .nav a {
-    padding: 12px 20px;
-    font-size: 1rem;
-    border-bottom: 1px solid #eee;
-  }
-} */
+/* PAGINA DA CONTAGEM */
 
 .contagem-section {
-  background: #dabca3;
   padding: 40px 20px;
   text-align: center;
 }
@@ -188,8 +187,8 @@ section {
 }
 
 .contagem-box {
-  background-color: #a186c0;
-  color: #fff;
+  background-color: #E5DFD8;
+  color: #E58A3A;
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -202,11 +201,13 @@ section {
 }
 
 .contagem-value {
+  font-family: 'Athelas', serif;
   font-size: 25px;
   font-weight: bold;
 }
 
 .contagem-label {
+  font-family: 'Athelas', serif;
   font-size: 12px;
 }
 
@@ -225,6 +226,8 @@ section {
     font-size: 9px;
   }
 }
+
+/* PAGINA DO CASAL */
 
 .carousel-container {
   width: 100%;
@@ -375,4 +378,130 @@ section {
   .carousel-thumbnails {
     gap: 8px;
   }
+}
+
+/* PAGINA DE PRESENTES */
+
+.presente-section {
+  background-color: #E5DFD8;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.presente-section p,
+.presente-section button,
+.presente-section input {
+  font-family: 'Athelas', serif;
+}
+
+.presente-section h2,
+.presente-section h3,
+.presente-section h4 {
+  font-family: 'Bubblegum Sans', cursive;
+}
+
+.gift-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gift-card {
+  width: 220px;
+  background: #fff;
+  border: 1px solid #DABCA3;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(82, 47, 26, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(82, 47, 26, 0.3);
+}
+
+.gift-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.gift-price {
+  font-weight: bold;
+  color: #522F1A;
+  margin: 8px 0;
+}
+
+.btn-presentear {
+  background: #955937;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 24px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: opacity 0.3s ease;
+}
+
+.btn-presentear:hover {
+  opacity: 0.9;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  min-width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+  color: #522F1A;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.input-name {
+  padding: 12px 0px;
+  border-radius: 12px;
+  border: 1px solid #DABCA3;
+  width: 100%;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.btn-pagar {
+  background: #00a650;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 16px;
+  margin-top: 18px;
+  cursor: pointer;
+}
+
+.btn-pagar:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

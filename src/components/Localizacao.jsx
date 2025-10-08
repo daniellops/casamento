@@ -1,6 +1,6 @@
-export default function Localizacao() {
+export default function Localizacao({ className }) {
   return (
-    <section id="localizacao">
+    <section id="localizacao" className={className}>
       <h2>Recepção</h2>
 
       <p>A nossa recepção vai acontecer no salão de festas do condomínio, e estamos superfelizes em ter vocês com a gente nesse dia tão especial! 💛</p>

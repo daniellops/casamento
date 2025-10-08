@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Casal() {
+export default function Casal({ className }) {
   // Defina seus paths de imagem aqui
   const images = [
     "/foto01.jpeg",
@@ -30,8 +30,8 @@ export default function Casal() {
   const goToIndex = (idx) => setCurrent(idx);
 
   return (
-    <section id="casal" style={{ background: '#DABCA3', color:'#fff'}}>
-      {/* <h2>O Casal</h2>
+    <section id="casal" className={className}>
+      <h2>O Casal</h2>
 
       <p>Aqui, vamos compartilhar com vocês os capítulos mais especiais da nossa história de amor. Cada riso, cada abraço e cada sonho – e agora, a contagem regressiva para o dia mais importante e sonhado de nossas vidas começou! Cada detalhe deste site carrega um pedacinho do nosso coração.</p>
 
@@ -41,7 +41,8 @@ export default function Casal() {
 
       <p>Que alegria ter cada um de vocês ao nosso lado nesse grande dia! Vamos juntos brindar o começo dessa nova etapa. Mal podemos esperar para viver esse momento mágico com vocês!</p>
 
-      <p>Então já deixa reservado aí: 29/11/2025!</p> */}
+      <p>Então já deixa reservado aí: 29/11/2025!</p>
+
       <div className="carousel-container">
         <div className="carousel-image-area">
           {/* <button className="carousel-btn left" onClick={goToPrev}>&lt;</button> */}

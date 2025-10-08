@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import guests from "../data/guests.json";
 
-export default function ConfirmarPresenca() {
+export default function ConfirmarPresenca({ className }) {
   const [name, setName] = useState("");
   const [phoneDigits, setPhoneDigits] = useState("");
   const [guestData, setGuestData] = useState(null);
@@ -41,7 +41,7 @@ export default function ConfirmarPresenca() {
   }
 
   return (
-    <section id="confirmar-presenca" style={{ marginTop: 40 }}>
+    <section id="confirmar-presenca" className={className}>
       <h2 style={{ textAlign: "center", marginBottom: 24 }}>
         Confirme sua presença
       </h2>
