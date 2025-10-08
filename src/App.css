@@ -15,6 +15,19 @@ section {
   overflow: hidden;
 }
 
+.capa-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f0e9; /* tom suave para transição visual */
+}
+
+.capa-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -33,6 +46,17 @@ section {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
+  background-color: #000;       /* fundo preto */
+  color: #fff;                  /* ícone branco */
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;       /* borda branca para destacar */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); /* sombra leve */
+  z-index: 1001;                /* acima do menu */
 }
 
 .nav {
@@ -52,7 +76,36 @@ section {
   color: #e43;
 }
 
-/* Responsivo para telas menores */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 16px 0;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+/* Responsivo para telas menores
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -79,7 +132,7 @@ section {
     font-size: 1rem;
     border-bottom: 1px solid #eee;
   }
-}
+} */
 
 .contagem-section {
   background: #dabca3;

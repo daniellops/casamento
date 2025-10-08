@@ -5,6 +5,7 @@ import Contagem from './components/Contagem';
 import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
 import Casal from './components/Casal';
+import Capa from './components/Capa'
 
 import './App.css';
 
@@ -12,7 +13,8 @@ export default function App() {
   return (
     <div>
       <Header />
-      <main style={{ paddingTop: "80px" }}>
+      <main>
+        <Capa />
         <Contagem />
         <Separador />
         <Casal />
