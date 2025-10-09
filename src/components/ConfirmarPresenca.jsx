@@ -23,11 +23,13 @@ export default function ConfirmarPresenca({ className }) {
       padding: "2px 4px",
       fontSize: 16,
       boxShadow: "none",
+      textAlign: "start",
       "&:hover": { borderColor: "#907357" },
     }),
     menu: (base) => ({
       ...base,
       borderRadius: 12,
+      textAlign: "start",
       overflow: "hidden",
     }),
   };
@@ -96,6 +98,7 @@ export default function ConfirmarPresenca({ className }) {
           display: "flex",
           flexDirection: "column",
           gap: 16,
+          color: "#522F1A",
         }}
       >
         <Select
@@ -125,10 +128,10 @@ export default function ConfirmarPresenca({ className }) {
         <button
           type="submit"
           style={{
+            backgroundColor: "#E5DFD8",
+            color: "#522F1A",
             padding: "12px 20px",
             borderRadius: 24,
-            background: "#907357",
-            color: "#fff",
             border: "none",
             fontSize: 16,
             cursor: "pointer",
@@ -141,6 +144,7 @@ export default function ConfirmarPresenca({ className }) {
       {/* Popup */}
       {popupType && (
         <div
+          className="bg-2"
           style={{
             position: "fixed",
             top: 0,
@@ -167,13 +171,15 @@ export default function ConfirmarPresenca({ className }) {
             <button
               onClick={closeModal}
               style={{
+                color: "#8D4E2B",
+                backgroundColor: "#fff",
                 position: "absolute",
                 top: 16,
                 right: 16,
                 border: "none",
                 background: "none",
                 fontSize: 20,
-                cursor: "pointer",
+                cursor: "pointer"
               }}
             >
               ×
@@ -181,9 +187,9 @@ export default function ConfirmarPresenca({ className }) {
 
             {popupType === "error" && (
               <>
-                <h3 style={{ marginBottom: 12, color: "red" }}>
+                <h2>
                   Convite não encontrado
-                </h3>
+                </h2>
                 <p style={{ marginBottom: 20 }}>
                   Não encontramos seus dados. Por favor, entre em contato com os
                   noivos.
@@ -192,11 +198,12 @@ export default function ConfirmarPresenca({ className }) {
                   onClick={closeModal}
                   style={{
                     background: "red",
-                    color: "#fff",
                     border: "none",
                     borderRadius: 24,
                     padding: "10px 32px",
                     cursor: "pointer",
+                    backgroundColor: "#8D4E2B",
+                    color: "#E5DFD8",
                   }}
                 >
                   Fechar
@@ -206,9 +213,9 @@ export default function ConfirmarPresenca({ className }) {
 
             {popupType === "success" && guestData && (
               <>
-                <h3 style={{ marginBottom: 12, color: "#907357" }}>
+                <h2>
                   Olá, {guestData.name}!
-                </h3>
+                </h2>
                 <p style={{ marginBottom: 12 }}>
                   Seu convite permite até{" "}
                   <strong>{guestData.maxGuests}</strong> pessoas.
@@ -242,8 +249,8 @@ export default function ConfirmarPresenca({ className }) {
                   onClick={handleConfirm}
                   disabled={loading}
                   style={{
-                    background: "#907357",
-                    color: "#fff",
+                    backgroundColor: "#8D4E2B",
+                    color: "#E5DFD8",
                     border: "none",
                     borderRadius: 24,
                     padding: "10px 32px",

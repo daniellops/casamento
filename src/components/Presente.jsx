@@ -130,7 +130,7 @@ export default function Presente({ className }) {
         {gifts.map((gift) => (
           <div key={gift.id} className="gift-card">
             <img src={gift.img} alt={gift.name} className="gift-img" />
-            <h4>{gift.name}</h4>
+            <p>{gift.name}</p>
             <div className="gift-price">R$ {gift.price.toFixed(2)}</div>
             <button className="btn-presentear" onClick={() => handlePresent(gift)}>
               Presentear
@@ -175,14 +175,15 @@ function PaymentModal({ gift, onClose }) {
   };
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay bg-2">
       <div className="modal-content">
         <button onClick={onClose} className="close-btn" title="Fechar">
           ×
         </button>
 
-        <h3>Pagamento Presente</h3>
+        <h2>Presente</h2>
         <img src={gift.img} alt={gift.name} className="modal-img" />
+        <div>{gift.name}</div>
         <div className="gift-price">R$ {gift.price.toFixed(2)}</div>
 
         <input
@@ -194,8 +195,8 @@ function PaymentModal({ gift, onClose }) {
           className="input-name"
         />
 
-        <button onClick={onPay} disabled={!name.trim() || loading} className="btn-pagar">
-          {loading ? "Processando..." : "Pagar com Mercado Pago"}
+        <button onClick={onPay} disabled={!name.trim() || loading} className="btn-presentear">
+          {loading ? "Processando..." : "Pagar"}
         </button>
       </div>
     </div>

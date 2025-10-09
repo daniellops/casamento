@@ -11,21 +11,21 @@ import PopupHandler from './components/PopupHandler'
 import './App.css';
 
 export default function App() {
-  const colors = [
-    { name: 'Cor mais escura', hex: '#522F1A' },
-    { name: 'Cor mais clara', hex: '#955937' },
-    { name: 'Degradê (início)', hex: '#8D4E2B' },
-    { name: 'Degradê (fim)', hex: '#DABCA3' },
-    { name: 'Background claro', hex: '#E5DFD8' },
-    { name: 'Planta (1)', hex: '#FAC57C' },
-    { name: 'Planta (2)', hex: '#E58A3A' },
-  ];
+  // const colors = [
+  //   { name: 'Cor mais escura', hex: '#522F1A' },
+  //   { name: 'Cor mais clara', hex: '#955937' },
+  //   { name: 'Degradê (início)', hex: '#8D4E2B' },
+  //   { name: 'Degradê (fim)', hex: '#DABCA3' },
+  //   { name: 'Background claro', hex: '#E5DFD8' },
+  //   { name: 'Planta (1)', hex: '#FAC57C' },
+  //   { name: 'Planta (2)', hex: '#E58A3A' },
+  // ];
 
   return (
     <div>
       <Header />
       <main>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', fontFamily: 'Athelas' }}>
+        {/* <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', fontFamily: 'Athelas' }}>
           {colors.map((color) => (
             <div
               key={color.hex}
@@ -47,7 +47,7 @@ export default function App() {
               <span>{color.hex}</span>
             </div>
           ))}
-        </div>
+        </div> */}
         <Capa />
         <Separador className="bg-2" />
         <Contagem className="bg-1" />

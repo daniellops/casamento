@@ -1,17 +1,24 @@
 /* Importando as fontes */
-@import url('https://fonts.googleapis.com/css2?family=Athelas&family=Bubblegum+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Athelas&family=Bubblegum+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+
 
 /* Textos */
 p {
-  font-family: 'Athelas', serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Títulos */
 h2 {
-  font-family: 'Bubblegum Sans', Arial;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
 }
 
-.bg-1{
+/* .bg-1{
  background-color: #E58A3A;
  color: #E5DFD8;
 }
@@ -19,7 +26,27 @@ h2 {
 .bg-2 {
   background-color: #E5DFD8;
   color: #E58A3A;
+} */
+:root {
+  --cor-escura: #522F1A;
+  --cor-clara: #E5DFD8;
+  --cor-degrade-inicio: #8D4E2B;
+  --cor-degrade-fim: #DABCA3;
+  --cor-planta-1: #FAC57C;
+  --cor-planta-2: #E58A3A;
 }
+
+/* Sessões */
+.bg-1 {
+  background-color: var(--cor-degrade-inicio);
+  color: var(--cor-clara);
+}
+
+.bg-2 {
+  background-color: var(--cor-clara);
+  color: var(--cor-escura);
+}
+
 
 section {
   max-width: 100%;
@@ -76,7 +103,7 @@ section {
 .logo {
   font-weight: bold;
   font-size: 1.4rem;
-  color: #b2907b;
+  color: var(--cor-degrade-inicio);
   letter-spacing: 1px;
 }
 
@@ -88,13 +115,13 @@ section {
 
 .nav-links a {
   text-decoration: none;
-  color: #5f6b77;
+  color: var(--cor-escura);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: #b2907b;
+  color: var(--cor-degrade-inicio);
 }
 
 /* Ícone hamburguer (mobile) */
@@ -108,7 +135,7 @@ section {
 .hamburger span {
   width: 25px;
   height: 3px;
-  background-color: #5f6b77;
+  background-color: var(--cor-degrade-inicio);
   border-radius: 2px;
 }
 
@@ -133,7 +160,7 @@ section {
 }
 
 .mobile-menu a {
-  color: #5f6b77;
+  color: var(--cor-escura);
   text-decoration: none;
   font-size: 1.1rem;
   padding: 10px 0;
@@ -146,7 +173,7 @@ section {
   border: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #5f6b77;
+  color: var(--cor-escura);;
 }
 
 /* Fundo escuro quando menu está aberto */
@@ -187,8 +214,8 @@ section {
 }
 
 .contagem-box {
-  background-color: #E5DFD8;
-  color: #E58A3A;
+  background-color: var(--cor-clara);
+  color: var(--cor-degrade-inicio);
   width: 100px;
   height: 100px;
   border-radius: 10px;
@@ -318,7 +345,7 @@ section {
 }
 
 .carousel-thumb.active {
-  border-color: #e43;
+  border-color: var(--cor-escura);
   opacity: 1;
 }
 
@@ -388,16 +415,11 @@ section {
   text-align: center;
 }
 
-.presente-section p,
-.presente-section button,
-.presente-section input {
-  font-family: 'Athelas', serif;
-}
 
-.presente-section h2,
-.presente-section h3,
-.presente-section h4 {
-  font-family: 'Bubblegum Sans', cursive;
+
+.modal-content h2 {
+  margin-block-start: auto;
+  margin-block-end: auto;
 }
 
 .gift-list {
@@ -408,6 +430,11 @@ section {
 }
 
 .gift-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* empurra o botão para o fim */
+  align-items: center;
+
   width: 220px;
   background: #fff;
   border: 1px solid #DABCA3;
@@ -444,6 +471,8 @@ section {
   cursor: pointer;
   font-size: 15px;
   transition: opacity 0.3s ease;
+  
+  margin-top: 10px; /* espaço entre botão e conteúdo */
 }
 
 .btn-presentear:hover {
@@ -482,10 +511,10 @@ section {
 }
 
 .input-name {
-  padding: 12px 0px;
+  padding: 12px 16px;
   border-radius: 12px;
   border: 1px solid #DABCA3;
-  width: 100%;
+  width: 80%;
   margin-top: 12px;
   font-size: 16px;
 }
