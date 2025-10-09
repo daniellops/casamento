@@ -228,8 +228,9 @@ export default function ConfirmarPresenca({ className }) {
                   value={attending}
                   onChange={(e) => setAttending(Number(e.target.value))}
                   style={{
-                    padding: "10px",
+                    height: "30px",
                     borderRadius: 12,
+                    padding: "14px 16px",
                     border: "1px solid #CCC",
                     marginBottom: 20,
                     width: "100%",
