@@ -6,6 +6,7 @@ import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
 import Casal from './components/Casal';
 import Capa from './components/Capa'
+import PopupHandler from './components/PopupHandler'
 
 import './App.css';
 
@@ -58,6 +59,7 @@ export default function App() {
         <Presente className="bg-2" />
         <Separador className="bg-2" />
         <ConfirmarPresenca className="bg-1" />
+        <PopupHandler />
       </main>
     </div>
   );

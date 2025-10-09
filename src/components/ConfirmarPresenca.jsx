@@ -1,19 +1,43 @@
 import React, { useState } from "react";
+import Select from "react-select";
 import guests from "../data/guests.json";
 
 export default function ConfirmarPresenca({ className }) {
-  const [name, setName] = useState("");
+  const [selectedGuest, setSelectedGuest] = useState(null);
   const [phoneDigits, setPhoneDigits] = useState("");
-  const [guestData, setGuestData] = useState(null);
   const [attending, setAttending] = useState(1);
-  const [popupType, setPopupType] = useState(null); // "success" | "error"
+  const [popupType, setPopupType] = useState(null);
+  const [guestData, setGuestData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e) {
+  const guestOptions = guests.map((g) => ({
+    value: g.name,
+    label: g.name,
+  }));
+
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      borderRadius: 12,
+      border: "1px solid #CCC",
+      padding: "2px 4px",
+      fontSize: 16,
+      boxShadow: "none",
+      "&:hover": { borderColor: "#907357" },
+    }),
+    menu: (base) => ({
+      ...base,
+      borderRadius: 12,
+      overflow: "hidden",
+    }),
+  };
+
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const guest = guests.find(
       (g) =>
-        g.name.toLowerCase() === name.trim().toLowerCase() &&
+        g.name.toLowerCase() === selectedGuest?.value.toLowerCase() &&
         g.phone.slice(-4) === phoneDigits
     );
 
@@ -30,14 +54,32 @@ export default function ConfirmarPresenca({ className }) {
     setPopupType(null);
   }
 
-  function handleConfirm() {
-    console.log({
-      name: guestData.name,
-      confirmedGuests: attending,
-    });
+  async function handleConfirm() {
+    if (!guestData) return;
+    try {
+      setLoading(true);
+      const res = await fetch("/api/confirmar-presenca", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: guestData.name,
+          celular4: phoneDigits,
+          quantidade: attending,
+        }),
+      });
 
-    setPopupType(null);
-    alert("Presença confirmada com sucesso!");
+      if (!res.ok) throw new Error("Falha ao confirmar presença");
+
+      const data = await res.json();
+      console.log("✅ Presença confirmada:", data);
+      setPopupType(null);
+      alert("Presença confirmada com sucesso!");
+    } catch (err) {
+      console.error(err);
+      alert("Erro ao enviar confirmação. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -56,18 +98,13 @@ export default function ConfirmarPresenca({ className }) {
           gap: 16,
         }}
       >
-        <input
-          type="text"
-          placeholder="Nome completo"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          style={{
-            padding: "12px 16px",
-            borderRadius: 12,
-            border: "1px solid #CCC",
-            fontSize: 16,
-          }}
+        <Select
+          options={guestOptions}
+          styles={customStyles}
+          placeholder="Selecione seu nome..."
+          value={selectedGuest}
+          onChange={(val) => setSelectedGuest(val)}
+          isClearable
         />
 
         <input
@@ -101,7 +138,7 @@ export default function ConfirmarPresenca({ className }) {
         </button>
       </form>
 
-      {/* Modal */}
+      {/* Popup */}
       {popupType && (
         <div
           style={{
@@ -203,6 +240,7 @@ export default function ConfirmarPresenca({ className }) {
 
                 <button
                   onClick={handleConfirm}
+                  disabled={loading}
                   style={{
                     background: "#907357",
                     color: "#fff",
@@ -210,9 +248,10 @@ export default function ConfirmarPresenca({ className }) {
                     borderRadius: 24,
                     padding: "10px 32px",
                     cursor: "pointer",
+                    opacity: loading ? 0.7 : 1,
                   }}
                 >
-                  Confirmar Presença
+                  {loading ? "Enviando..." : "Confirmar Presença"}
                 </button>
               </>
             )}
