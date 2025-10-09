@@ -456,6 +456,13 @@ section {
   object-fit: cover;
 }
 
+.modal-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 .gift-price {
   font-weight: bold;
   color: #522F1A;
