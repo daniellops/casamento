@@ -224,27 +224,16 @@ export default function ConfirmarPresenca({ className }) {
                 <label style={{ display: "block", marginBottom: 8 }}>
                   Quantas pessoas irão comparecer?
                 </label>
-                <select
-                  value={attending}
-                  onChange={(e) => setAttending(Number(e.target.value))}
-                  style={{
-                    height: "30px",
-                    borderRadius: 12,
-                    padding: "14px 16px",
-                    border: "1px solid #CCC",
-                    marginBottom: 20,
-                    width: "100%",
-                  }}
-                >
-                  {Array.from(
-                    { length: guestData.maxGuests },
-                    (_, i) => i + 1
-                  ).map((num) => (
-                    <option key={num} value={num}>
-                      {num}
-                    </option>
-                  ))}
-                </select>
+                <Select
+                  value={{ value: attending, label: attending.toString() }}
+                  onChange={(option) => setAttending(Number(option.value))}
+                  options={Array.from({ length: guestData.maxGuests }, (_, i) => ({
+                    value: i + 1,
+                    label: (i + 1).toString(),
+                  }))}
+                  styles={customStyles}
+                  placeholder="Selecione a quantidade..."
+                />
 
                 <button
                   onClick={handleConfirm}
@@ -257,6 +246,7 @@ export default function ConfirmarPresenca({ className }) {
                     padding: "10px 32px",
                     cursor: "pointer",
                     opacity: loading ? 0.7 : 1,
+                    marginTop: 20,
                   }}
                 >
                   {loading ? "Enviando..." : "Confirmar Presença"}
