@@ -3,10 +3,22 @@ import React, { useState } from "react";
 // Lista de valores dos presentes
 const gifts = [
   {
+    id: 22,
+    price: 10,
+    name: "teste",
+    img: "/presentes/01.jpeg",
+  },
+  {
     id: 0,
     price: 150,
     name: "Suplemento pro amor: whey emocional sabor lua de mel",
     img: "/presentes/01.jpeg",
+  },
+  {
+    id: 19,
+    price: 175,
+    name: "Café turbo pro amor: dose dupla de energia e carinho matinal",
+    img: "/presentes/19.jpeg",
   },
   {
     id: 1,
@@ -15,10 +27,22 @@ const gifts = [
     img: "/presentes/02.jpeg",
   },
   {
+    id: 20,
+    price: 225,
+    name: "Noite do carboidrato: pizza, vinho e zero culpa",
+    img: "/presentes/20.jpeg",
+  },
+  {
     id: 2,
     price: 250,
     name: "Check-in garantido: nossa primeira escapadinha pós-lua de mel",
     img: "/presentes/03.jpeg",
+  },
+  {
+    id: 21,
+    price: 275,
+    name: "Aula de dança do amor: dois passos pra frente, zero pra trás",
+    img: "/presentes/21.jpeg",
   },
   {
     id: 3,
