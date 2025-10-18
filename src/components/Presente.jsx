@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 
-// Lista de valores dos presentes
 const gifts = [
-  {
-    id: 22,
-    price: 10,
-    name: "teste",
-    img: "/presentes/01.jpeg",
-  },
   {
     id: 0,
     price: 150,
@@ -139,6 +132,17 @@ const gifts = [
 export default function Presente({ className }) {
   const [selectedGift, setSelectedGift] = useState(null);
 
+  const hasTestClass = document
+    .getElementById("root")
+    ?.classList.contains("teste") || false;
+
+  const giftTest = {
+    id: 22,
+    price: 1,
+    name: "teste",
+    img: "/presentes/01.jpeg",
+  };
+
   function handlePresent(gift) {
     setSelectedGift(gift);
   }
@@ -151,6 +155,16 @@ export default function Presente({ className }) {
     <section id="presente" className={`presente-section ${className || ""}`}>
       <h2 className="title">Lista de Presentes</h2>
       <div className="gift-list">
+        {hasTestClass && 
+          <div key={giftTest.id} className="gift-card">
+            <img src={giftTest.img} alt={giftTest.name} className="gift-img" />
+            <p>{giftTest.name}</p>
+            <div className="gift-price">R$ {giftTest.price.toFixed(2)}</div>
+            <button className="btn-presentear" onClick={() => handlePresent(giftTest)}>
+              Presentear
+            </button>
+          </div>
+        }
         {gifts.map((gift) => (
           <div key={gift.id} className="gift-card">
             <img src={gift.img} alt={gift.name} className="gift-img" />
@@ -170,7 +184,7 @@ export default function Presente({ className }) {
 
 const handlePayment = async (name, gift) => {
   try {
-    const response = await fetch("http://localhost:3001/api/create_payment", {
+    const response = await fetch("https://api.lucasetalita.com.br/api/create_payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, giftName: gift.name, price: gift.price }),

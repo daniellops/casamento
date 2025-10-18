@@ -16,6 +16,7 @@ export default function Navbar() {
           <a href="#contagem">HOME</a>
           <a href="#casal">O CASAL</a>
           <a href="#localizacao">RECEPÇÃO</a>
+          <a href="#dress-code">DRESS CODE</a>
           <a href="#presente">LISTA DE PRESENTES</a>
           <a href="#confirmar-presenca">CONFIRME SUA PRESENÇA</a>
         </nav>
@@ -34,6 +35,7 @@ export default function Navbar() {
         <a href="#contagem" onClick={closeMenu}>HOME</a>
         <a href="#casal" onClick={closeMenu}>O CASAL</a>
         <a href="#localizacao" onClick={closeMenu}>RECEPÇÃO</a>
+        <a href="#dress-code" onClick={closeMenu}>DRESS CODE</a>
         <a href="#presente" onClick={closeMenu}>LISTA DE PRESENTES</a>
         <a href="#confirmar-presenca" onClick={closeMenu}>CONFIRME SUA PRESENÇA</a>
       </div>

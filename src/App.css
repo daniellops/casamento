@@ -217,8 +217,8 @@ section {
 }
 
 .contagem-box {
-  background-color: var(--cor-clara);
-  color: var(--cor-degrade-inicio);
+  background-color: var(--cor-degrade-inicio);
+  color: var(--cor-clara);
   width: 100px;
   height: 100px;
   border-radius: 10px;

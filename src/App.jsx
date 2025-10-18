@@ -6,6 +6,8 @@ import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
 import Casal from './components/Casal';
 import Capa from './components/Capa'
+import DressCode from './components/DressCode'
+import BemVindo from './components/BemVindo'
 import PopupHandler from './components/PopupHandler'
 
 import './App.css';
@@ -49,12 +51,17 @@ export default function App() {
           ))}
         </div> */}
         <Capa />
+        {/* <Separador className="bg-2" /> */}
         <Separador className="bg-2" />
-        <Contagem className="bg-1" />
+        <BemVindo className="bg-1"/>
         <Separador className="bg-1" />
-        <Casal className="bg-2" />
+        <Contagem className="bg-2" />
         <Separador className="bg-2" />
-        <Localizacao className="bg-1" />
+        <Casal className="bg-1" />
+        <Separador className="bg-1" />
+        <Localizacao className="bg-2" />
+        <Separador className="bg-2" />
+        <DressCode className="bg-1" />
         <Separador className="bg-1" />
         <Presente className="bg-2" />
         <Separador className="bg-2" />
