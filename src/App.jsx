@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Localizacao from './components/Localizacao';
-import Presente from './components/Presente';
+// import Presente from './components/Presente';
+import PresentePix from './components/PresentePix';
 import Contagem from './components/Contagem';
 import Separador from './components/Separador';
 import ConfirmarPresenca from './components/ConfirmarPresenca';
@@ -50,7 +51,7 @@ export default function App() {
             </div>
           ))}
         </div> */}
-        <Capa />
+        <Capa className="bg-2" />
         {/* <Separador className="bg-2" /> */}
         <Separador className="bg-2" />
         <BemVindo className="bg-1"/>
@@ -63,7 +64,8 @@ export default function App() {
         <Separador className="bg-2" />
         <DressCode className="bg-1" />
         <Separador className="bg-1" />
-        <Presente className="bg-2" />
+        {/* <Presente className="bg-2" /> */}
+        <PresentePix className="bg-2" />
         <Separador className="bg-2" />
         <ConfirmarPresenca className="bg-1" />
         <PopupHandler />

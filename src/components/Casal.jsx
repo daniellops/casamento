@@ -3,14 +3,16 @@ import React, { useState, useEffect } from "react";
 export default function Casal({ className }) {
   // Defina seus paths de imagem aqui
   const images = [
-    "/foto01.jpeg",
-    "/foto02.jpeg",
-    "/foto03.jpeg",
-    "/foto04.jpeg",
-    "/foto05.jpeg",
-    "/foto06.jpeg",
-    "/foto07.jpeg",
-    "/foto08.jpeg",
+    "/foto01.jpg",
+    "/foto02.jpg",
+    "/foto03.jpg",
+    "/foto04.jpg",
+    "/foto05.jpg",
+    "/foto06.jpg",
+    "/foto07.jpg",
+    "/foto08.jpg",
+    "/foto09.jpg",
+    "/foto10.jpg",
   ];
 
   const [current, setCurrent] = useState(0);
@@ -33,7 +35,9 @@ export default function Casal({ className }) {
     <section id="casal" className={className}>
       <h2>O Casal</h2>
 
-      <p>Aqui, vamos compartilhar com vocês os capítulos mais especiais da nossa história de amor. Cada riso, cada abraço e cada sonho – e agora, a contagem regressiva para o dia mais importante e sonhado de nossas vidas começou! Cada detalhe deste site carrega um pedacinho do nosso coração.</p>
+      <p>Nossa história começou há quase 6 anos, quando as teias do destino resolveram entrelaçar nossos caminhos e, desde então, não nos separamos mais. Subimos serra, descemos serra, viemos embora para Horizonte e, nessa trajetória, celebramos muitas conquistas e desafios, até a decisão de que queríamos oficializar nossa união, amar sem temer e provar que nossa família existe, sim!</p>
+
+      {/* <p>Aqui, vamos compartilhar com vocês os capítulos mais especiais da nossa história de amor. Cada riso, cada abraço e cada sonho – e agora, a contagem regressiva para o dia mais importante e sonhado de nossas vidas começou! Cada detalhe deste site carrega um pedacinho do nosso coração.</p>
 
       <p>O coração já bate mais forte, o frio na barriga aumenta, a emoção transborda e a ansiedade pelo dia tão esperado só cresce. Tudo faz sentido porque estamos juntos vivendo esse momento. Em breve, diante de quem mais amamos, daremos um passo que selará para sempre nossa união – um amor que nos completa, nos fortalece e nos faz sonhar.</p>
 
@@ -41,7 +45,7 @@ export default function Casal({ className }) {
 
       <p>Que alegria ter cada um de vocês ao nosso lado nesse grande dia! Vamos juntos brindar o começo dessa nova etapa. Mal podemos esperar para viver esse momento mágico com vocês!</p>
 
-      <p>Então já deixa reservado aí: 29/11/2025!</p>
+      <p>Então já deixa reservado aí: 29/11/2025!</p> */}
 
       <div className="carousel-container">
         <div className="carousel-image-area">

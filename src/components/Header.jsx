@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar-container">
-        <div className="logo">T&L</div>
+        <div className="logo">M&S</div>
 
         {/* Menu desktop */}
         <nav className="nav-links">

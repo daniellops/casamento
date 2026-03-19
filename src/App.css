@@ -2,6 +2,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Athelas&family=Bubblegum+Sans&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
 
+@font-face {
+  font-family: "Eyesome Script";
+  src: url("Eyesome-Script.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* Textos */
 p {
@@ -28,12 +34,25 @@ h2 {
   color: #E58A3A;
 } */
 :root {
-  --cor-escura: #522F1A;
+  /* --cor-escura: #522F1A;
   --cor-clara: #E5DFD8;
   --cor-degrade-inicio: #8D4E2B;
   --cor-degrade-fim: #DABCA3;
   --cor-planta-1: #FAC57C;
-  --cor-planta-2: #E58A3A;
+  --cor-planta-2: #E58A3A; */
+
+  --cor-clara: #DDEBDD;
+    /* → fundo */
+  /* --cor-degrade-inicio: #98C098; */
+  --cor-degrade-inicio: #2E5A34;
+  /* #7CAA7C; */
+  /* --cor-escura: #609864; */
+    /* → sua cor principal */
+  /* #4F8454;
+  #3F7045; */
+  /* --cor-escura: #2E5A34;   */
+  --cor-escura: #98C098;  
+  /* → sombra forte */
 }
 
 /* Sessões */
@@ -44,7 +63,7 @@ h2 {
 
 .bg-2 {
   background-color: var(--cor-clara);
-  color: var(--cor-escura);
+  color: var(--cor-degrade-inicio);
 }
 
 section {
@@ -67,7 +86,71 @@ section {
   filter: invert(93%) sepia(3%) saturate(245%) hue-rotate(10deg) brightness(101%) contrast(95%);
 }
 
-/* CAPA */
+#capa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  text-align: center;
+  padding: 2rem;
+}
+
+.capa-wrapper {
+  max-width: 900px;
+  width: 100%;
+}
+
+.capa-topo {
+  font-family: "Playfair Display", serif; /* fonte elegante para topo */
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.capa-nomes {
+  /* display: inline-block; */
+  padding: 2rem;
+  background-image: url("/capa.png"); /* brush atrás dos nomes */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.capa-nome {
+  font-family: "Eyesome Script", cursive;
+  font-size: 4rem;
+  color: #222;
+  margin: 0 0.2rem;
+  /* display: inline-block; */
+}
+
+.capa-data {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .capa-nome {
+    font-size: 2.5rem;
+  }
+
+  .capa-topo,
+  .capa-data {
+    font-size: 1.2rem;
+  }
+
+  .capa-nomes {
+    padding: 1rem;
+    background-size: 80%;
+  }
+}
+
+
+
+
 
 .capa-section {
   width: 100%;
@@ -80,6 +163,24 @@ section {
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+.capa-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.capa-brush-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.capa-brush {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: -1;
 }
 
 /* MENU */

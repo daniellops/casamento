@@ -16,8 +16,8 @@ export default function Localizacao({ className }) {
         overflow: 'hidden',
         boxShadow: '0 2px 8px #aaa'
       }}>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.775632433255!2d-38.46439362536643!3d-3.8582636438458215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c75aed0582a46d%3A0xad748c9356b16e87!2sAv.%20Jos%C3%A9%20Moraes%20de%20Almeida%2C%20777%20-%20Coa%C3%A7u%2C%20Eus%C3%A9bio%20-%20CE%2C%2061760-907!5e0!3m2!1spt-BR!2sbr!4v1757021054777!5m2!1spt-BR!2sbr"
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.006693519202!2d-38.56073252502581!3d-3.8086325961652134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74e6e240bf389%3A0x7027bacc1f42f4b0!2sR.%20Benjamim%20Brasil%2C%202100%20-%20Mondubim%2C%20Fortaleza%20-%20CE%2C%2060761-795!5e0!3m2!1spt-BR!2sbr!4v1773694593977!5m2!1spt-BR!2sbr" 
           width="100%"
           height="400"
           style={{ border: 0 }}

@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import moment from "moment-timezone";
 
 export default function Contagem({ className }) {
-  const targetDate = moment.tz("2025-11-29 18:00:00", "America/Fortaleza");
+  const targetDate = moment.tz("2026-05-29 19:00:00", "America/Fortaleza");
 
   const calculateTimeLeft = () => {
     const now = moment.tz("America/Fortaleza");
     const difference = targetDate.diff(now);
 
     if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      return { dias: 0, horas: 0, minutos: 0, segundos: 0 };
     }
 
     return {
