@@ -73,7 +73,7 @@ export default function Capa({ className }) {
           <img src="/capa.png" alt="" className="capa-brush" />
 
           <h1 className="capa-nome">Marília</h1>
-          <h1 className="capa-nome destaque">E</h1>
+          <h1 className="capa-nome destaque and">E</h1>
           <h1 className="capa-nome destaque">Suellen</h1>
         </div>
 

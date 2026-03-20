@@ -102,7 +102,7 @@ section {
 
 .capa-topo {
   font-family: "Playfair Display", serif; /* fonte elegante para topo */
-  font-size: 1.8rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
   color: #333;
 }
@@ -119,10 +119,14 @@ section {
 
 .capa-nome {
   font-family: "Eyesome Script", cursive;
-  font-size: 4rem;
+  font-size: 5rem;
   color: #222;
   margin: 0 0.2rem;
   /* display: inline-block; */
+}
+
+.capa-nome.and{
+  font-size: 3rem;
 }
 
 .capa-data {
@@ -138,14 +142,18 @@ section {
     font-size: 2.5rem;
   }
 
+  .capa-nome.and{
+    font-size: 1.5rem;
+  }
+
   .capa-topo,
   .capa-data {
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   }
 
   .capa-nomes {
     padding: 1rem;
-    background-size: 80%;
+    background-size: 100% 80%;
   }
 }
 
