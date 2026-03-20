@@ -109,9 +109,10 @@ section {
 
 .capa-nomes {
   /* display: inline-block; */
+  background-size: 100% 80%;
   padding: 2rem;
   background-image: url("/capa.png"); /* brush atrás dos nomes */
-  background-size: contain;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   background-position: center;
 }

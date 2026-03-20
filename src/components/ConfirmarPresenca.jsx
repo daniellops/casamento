@@ -3,8 +3,7 @@ import Select from "react-select";
 import guests from "../data/guests.json";
 
 export default function ConfirmarPresenca({ className }) {
-  const [selectedGuest, setSelectedGuest] = useState(null);
-  const [phoneDigits, setPhoneDigits] = useState("");
+  const [guest, setGuest] = useState("");
   const [attending, setAttending] = useState(1);
   const [popupType, setPopupType] = useState(null);
   const [guestData, setGuestData] = useState(null);
@@ -19,12 +18,12 @@ export default function ConfirmarPresenca({ className }) {
     control: (base) => ({
       ...base,
       borderRadius: 12,
-      border: "1px solid #CCC",
+      border: "1px solid #DDEBDD",
       padding: "2px 4px",
       fontSize: 16,
       boxShadow: "none",
       textAlign: "start",
-      "&:hover": { borderColor: "#907357" },
+      "&:hover": { borderColor: "#2E5A34" },
     }),
     menu: (base) => ({
       ...base,
@@ -34,17 +33,26 @@ export default function ConfirmarPresenca({ className }) {
     }),
   };
 
+  const normalize = (str) => {
+    return str
+    ?.normalize("NFD")                 // separa acentos das letras
+    .replace(/[\u0300-\u036f]/g, "")  // remove os acentos
+    .toLowerCase()
+    .trim();
+  }
+  
+
   async function handleSubmit(e) {
+    console.log(guest);
     e.preventDefault();
 
-    const guest = guests.find(
+    const guestInvited = guests.find(
       (g) =>
-        g.name.toLowerCase() === selectedGuest?.value.toLowerCase() &&
-        g.phone.slice(-4) === phoneDigits
+        normalize(g.convidado) === normalize(guest)
     );
 
-    if (guest) {
-      setGuestData(guest);
+    if (guestInvited) {
+      setGuestData(guestInvited);
       setAttending(1);
       setPopupType("success");
     } else {
@@ -64,8 +72,7 @@ export default function ConfirmarPresenca({ className }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          nome: guestData.name,
-          codigo: phoneDigits,
+          nome: guestData.convidado,
           quantidade: attending,
         }),
       });
@@ -98,29 +105,19 @@ export default function ConfirmarPresenca({ className }) {
           display: "flex",
           flexDirection: "column",
           gap: 16,
-          color: "#522F1A",
+          color: "#2E5A34",
         }}
       >
-        <Select
-          options={guestOptions}
-          styles={customStyles}
-          placeholder="Selecione seu nome..."
-          value={selectedGuest}
-          onChange={(val) => setSelectedGuest(val)}
-          isClearable
-        />
-
         <input
           type="text"
-          maxLength={4}
-          placeholder="4 últimos dígitos do celular"
-          value={phoneDigits}
-          onChange={(e) => setPhoneDigits(e.target.value)}
+          placeholder="Nome do convidado"
+          value={guest}
+          onChange={(e) => setGuest(e.target.value)}
           required
           style={{
             padding: "12px 16px",
             borderRadius: 12,
-            border: "1px solid #CCC",
+            border: "1px solid #DDEBDD",
             fontSize: 16,
           }}
         />
@@ -128,8 +125,8 @@ export default function ConfirmarPresenca({ className }) {
         <button
           type="submit"
           style={{
-            backgroundColor: "#E5DFD8",
-            color: "#522F1A",
+            backgroundColor: "#DDEBDD",
+            color: "#2E5A34",
             padding: "12px 20px",
             borderRadius: 24,
             border: "none",
@@ -160,7 +157,7 @@ export default function ConfirmarPresenca({ className }) {
         >
           <div
             style={{
-              background: "#FFF",
+              background: "#DDEBDD",
               borderRadius: 16,
               padding: 32,
               minWidth: 350,
@@ -171,8 +168,8 @@ export default function ConfirmarPresenca({ className }) {
             <button
               onClick={closeModal}
               style={{
-                color: "#8D4E2B",
-                backgroundColor: "#fff",
+                color: "#2E5A34",
+                backgroundColor: "#DDEBDD",
                 position: "absolute",
                 top: 16,
                 right: 16,
@@ -202,8 +199,8 @@ export default function ConfirmarPresenca({ className }) {
                     borderRadius: 24,
                     padding: "10px 32px",
                     cursor: "pointer",
-                    backgroundColor: "#8D4E2B",
-                    color: "#E5DFD8",
+                    backgroundColor: "#2E5A34",
+                    color: "#DDEBDD",
                   }}
                 >
                   Fechar
@@ -214,11 +211,11 @@ export default function ConfirmarPresenca({ className }) {
             {popupType === "success" && guestData && (
               <>
                 <h2>
-                  Olá, {guestData.name}!
+                  Olá, {guestData.convidado}!
                 </h2>
                 <p style={{ marginBottom: 12 }}>
                   Seu convite permite até{" "}
-                  <strong>{guestData.maxGuests}</strong> pessoas.
+                  <strong>{guestData.quantidade}</strong> pessoas.
                 </p>
 
                 <label style={{ display: "block", marginBottom: 8 }}>
@@ -227,7 +224,7 @@ export default function ConfirmarPresenca({ className }) {
                 <Select
                   value={{ value: attending, label: attending.toString() }}
                   onChange={(option) => setAttending(Number(option.value))}
-                  options={Array.from({ length: guestData.maxGuests }, (_, i) => ({
+                  options={Array.from({ length: guestData.quantidade }, (_, i) => ({
                     value: i + 1,
                     label: (i + 1).toString(),
                   }))}
@@ -239,8 +236,8 @@ export default function ConfirmarPresenca({ className }) {
                   onClick={handleConfirm}
                   disabled={loading}
                   style={{
-                    backgroundColor: "#8D4E2B",
-                    color: "#E5DFD8",
+                    backgroundColor: "#2E5A34",
+                    color: "#DDEBDD",
                     border: "none",
                     borderRadius: 24,
                     padding: "10px 32px",
