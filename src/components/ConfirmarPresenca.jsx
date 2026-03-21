@@ -68,7 +68,7 @@ export default function ConfirmarPresenca({ className }) {
     if (!guestData) return;
     try {
       setLoading(true);
-      const res = await fetch("https://api.lucasetalita.com.br/api/confirmar-presenca", {
+      const res = await fetch("http://localhost:8080/api/confirmar-presenca", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

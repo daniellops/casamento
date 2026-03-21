@@ -53,7 +53,7 @@ export default function App() {
         </div> */}
         <Capa className="bg-2" />
         {/* <Separador className="bg-2" /> */}
-        <Separador className="bg-2" />
+        {/* <Separador className="bg-2" /> */}
         <BemVindo className="bg-1"/>
         <Separador className="bg-1" />
         <Contagem className="bg-2" />

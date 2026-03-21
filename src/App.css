@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Eyesome Script";
-  src: url("Eyesome-Script.otf") format("opentype");
+  src: url("https://marialiaesuellen-fonts.s3.us-east-1.amazonaws.com/Eyesome-Script.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -87,18 +87,52 @@ section {
 }
 
 #capa {
+  position: relative;
+  padding: 0 2rem; /* seu padding lateral */
+  overflow: hidden; /* evita que as imagens ultrapassem */
+
   display: flex;
   justify-content: center;
   align-items: center;
   /* min-height: 100vh; */
   text-align: center;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .capa-wrapper {
+  padding: 32px 0px;
   max-width: 900px;
-  width: 100%;
+  width: 80%;
 }
+
+.section-container {
+  position: relative;
+  padding: 0 32px; /* seu padding lateral */
+  overflow: hidden; /* evita que as imagens ultrapassem */
+}
+
+.img-canto-esquerdo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: auto;
+}
+
+.img-canto-direito {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: auto;
+}
+
+/* @media (max-width: 768px) {
+  .img-canto-esquerdo,
+  .img-canto-direito {
+    width: 50px;
+  }
+} */
 
 .capa-topo {
   font-family: "Playfair Display", serif; /* fonte elegante para topo */
@@ -138,6 +172,10 @@ section {
 
 /* Responsividade */
 @media (max-width: 600px) {
+  .capa-wrapper {
+    padding: 18px 0px;
+  }
+
   .capa-nome {
     font-size: 2.5rem;
   }

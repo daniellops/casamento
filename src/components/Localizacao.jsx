@@ -3,10 +3,9 @@ export default function Localizacao({ className }) {
     <section id="localizacao" className={className}>
       <h2>Recepção</h2>
 
-      <p>A nossa recepção vai acontecer no salão de festas do condomínio, e estamos superfelizes em ter vocês com a gente nesse dia tão especial! 💛</p>
-      <p>Ao chegar na portaria, é só avisar que está vindo para o casamento de Talita e Lucas, no salão de festas.</p>
-      <p>Ah, e um lembrete importante: não esqueça de levar um documento de identificação com foto, tá? Sem ele, a entrada no condomínio não é permitida.</p>
-      <p>Contamos com vocês pra deixar essa noite ainda mais incrível!</p>
+      <p>Nossa cerimônia será realizada no mesmo local da festa e começará <strong>pontualmente às 19H</strong>. O local que escolhemos foi a Casa Celebre (R. Benjamim Brasil, 2100), e estamos super felizes em ter vocês com a gente nesse dia tão especial! 💚</p>
+      <p>Ao chegar, é só informar o seu nome completo na recepção e dizer que está vindo para o casamento de Marília e Suellen.</p>
+      <p>Contamos com vocês para deixar essa noite ainda mais incrível!</p>
 
       <div style={{
         width: '100%',

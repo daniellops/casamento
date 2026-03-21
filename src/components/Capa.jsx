@@ -64,13 +64,15 @@
 export default function Capa({ className }) {
   return (
     <section id="capa" className={className}>
+      <img src="/4.png" className="img-canto-esquerdo" alt="Decorativo esquerdo" />
+      <img src="/5.png" className="img-canto-direito" alt="Decorativo direito" />
       <div className="capa-wrapper">
         <p className="capa-topo">
           BEM-VINDOS AO CASAMENTO DE
         </p>
 
         <div className="capa-nomes">
-          <img src="/capa.png" alt="" className="capa-brush" />
+          {/* <img src="/capa.png" alt="" className="capa-brush" /> */}
 
           <h1 className="capa-nome">Marília</h1>
           <h1 className="capa-nome destaque and">E</h1>

@@ -3,6 +3,14 @@ export default function PresentePix({ className }) {
     <section id="presente" className={className}>
       <h2>Lista de Presentes</h2>
 
+      <p>Todos sabem que somos um casal viajante e já escolhemos o destino da nossa lua de mel: Chile!</p>
+      <p>Optamos por não fazer lista de presentes.</p>
+      <p>Se quiserem nos presentear, uma ajudinha via Pix para essa aventura geladinha e inesquecível será recebida com muito amor!</p>
+
+      <p><strong>Por favor, confira todos os dados antes de confirmar a transferência.</strong></p>
+      <p><strong>Pix: </strong>53624661-eead-40e1-a85d-d9a2d8eb3ae7</p>
+      <p><strong>Nome: </strong>Suellen Barbosa Machado <strong>Banco: </strong>Pic Pay</p>
+
       <div
         style={{
           display: "flex",
@@ -11,12 +19,6 @@ export default function PresentePix({ className }) {
           justifyContent: "center",
         }}
       >
-        {/* <p style={{ marginBottom: "20px", maxWidth: "400px" }}> */}
-          
-        {/* </p> */}
-        <p>Todos sabem que somos um casal viajante e já escolhemos o destino da nossa lua de mel: Chile!</p>
-        <p>Optamos por não fazer lista de presentes.</p>
-        <p>Se quiserem nos presentear, uma ajudinha via Pix para essa aventura geladinha e inesquecível será recebida com muito amor!</p>
 
         <div
           style={{
